@@ -22,27 +22,22 @@ class MyApp extends StatelessWidget {
           ),
         ),
         body: Center(
-          child : Text(
-            "Hi Am James learning Dart",
-            textAlign: TextAlign.center,
-            textDirection: TextDirection.rtl,
-            softWrap: true,
-            overflow: TextOverflow.visible,
-            style: TextStyle(
-              fontSize: 40.0,
-              fontWeight: FontWeight.bold,
-              fontStyle: FontStyle.italic,
-              //color: Colors.blue,
-              color:Color(0xffe74c3c),
-              //color: Color.fromRGBO(255, 0, 0, 1.0),
-              fontFamily: "Lucida Sans Unicode",
-              decoration: TextDecoration.underline,
-              decorationColor: Colors.black,
-              decorationStyle: TextDecorationStyle.dotted,
-              //background: Paint()..color= Colors.black..style = PaintingStyle.stroke,
-             // backgroundColor: Colors.black
+          child : MaterialButton(
+            onPressed: () {},
+            elevation: 40.0,
+            color: Colors.red[400],
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15.0),
+            ),
+            child: Text(
+              "Material Button",
+              style: TextStyle(
+                fontSize: 30.0,
+                color: Colors.white,
+              ),
             ),
           ),
+
       ),
       ),
     );
