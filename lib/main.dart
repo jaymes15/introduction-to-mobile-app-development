@@ -22,20 +22,23 @@ class MyApp extends StatelessWidget {
           ),
         ),
         body: Center(
-          child : FlatButton(
-            onPressed:() {},
-            color: Colors.red,
-           // highlightColor: Colors.cyan,
-            splashColor: Colors.green,
-            padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+          child : RaisedButton(
+            onPressed: () {},
+            color: Colors.white,
+            //highlightColor: Colors.blue,
+            splashColor: Colors.blue,
+            padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
+            elevation: 10.0,
+            highlightElevation: 30.0,
+            shape: Border.all(color: Colors.red, width:2.0, style: BorderStyle.solid),
+
             child: Text(
-              "flat button",
+              "Raised Button",
               style: TextStyle(
-                fontSize: 30.0,
-                color: Colors.white,
+                fontSize: 20.0
               ),
             ),
-        ),
+          ),
       ),
       ),
     );
