@@ -21,19 +21,36 @@ class MyApp extends StatelessWidget {
             ),
           ),
         ),
-        body: Center(
-          child : IconButton(
-            onPressed: () {},
-            splashColor: Colors.cyan,
-            icon: Icon(
-              Icons.add_a_photo,
-            ),
-            iconSize: 40.0,
-            tooltip: "Add Photo",
-          ),
+        body: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
 
+
+            Text(
+              "this is text",
+              style:TextStyle(
+                color: Colors.red,
+                fontSize: 20.0,
+              ),
+            ),
+            RaisedButton(
+              onPressed: () {},
+              elevation: 30.0,
+              color: Colors.white,
+              shape: Border.all(color: Colors.red, width: 2.0, style: BorderStyle.solid),
+              child: Text(
+                "this is a  raised button",
+                style: TextStyle(
+                color: Colors.black,
+                fontSize: 20.0,
+                ),
+              )
+            ),
+          ]
+        ),
       ),
-      ),
-    );
+      );
+
   }
 }
