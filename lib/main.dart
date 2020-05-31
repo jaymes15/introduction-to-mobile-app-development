@@ -21,8 +21,9 @@ class MyApp extends StatelessWidget {
             ),
           ),
         ),
-        body: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        body: Center(
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
 
@@ -33,6 +34,10 @@ class MyApp extends StatelessWidget {
                 color: Colors.red,
                 fontSize: 20.0,
               ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+
             ),
             RaisedButton(
               onPressed: () {},
@@ -49,6 +54,7 @@ class MyApp extends StatelessWidget {
             ),
           ]
         ),
+      ),
       ),
       );
 
