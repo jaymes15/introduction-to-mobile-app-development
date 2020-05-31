@@ -22,20 +22,14 @@ class MyApp extends StatelessWidget {
           ),
         ),
         body: Center(
-          child : MaterialButton(
+          child : IconButton(
             onPressed: () {},
-            elevation: 40.0,
-            color: Colors.red[400],
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15.0),
+            splashColor: Colors.cyan,
+            icon: Icon(
+              Icons.add_a_photo,
             ),
-            child: Text(
-              "Material Button",
-              style: TextStyle(
-                fontSize: 30.0,
-                color: Colors.white,
-              ),
-            ),
+            iconSize: 40.0,
+            tooltip: "Add Photo",
           ),
 
       ),
