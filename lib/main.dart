@@ -46,7 +46,7 @@ class _MyHomepageState extends State<MyHomepage>{
             },
             autocorrect: true,
             autofocus: true,
-            
+
             //obscureText: true, password
             decoration: InputDecoration(
               //labelText: "username", placeholder and float up when typing
