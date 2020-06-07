@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'secondscreen.dart';
 
 
 class firstscreen extends StatefulWidget{
@@ -40,7 +41,30 @@ class _firstscreenState extends State<firstscreen> {
                   Navigator.pop(context);
                 },
                 child: Text(
-                  "Screen 2",
+                  "Back",
+                  style: TextStyle(
+                    fontSize: 30.0,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(10.0),
+              child: RaisedButton(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 30.0,
+                  vertical: 15.0,
+                ),
+                color: Colors.red,
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => secondscreen()),
+                  );
+                  },
+                child: Text(
+                  "Third Second",
                   style: TextStyle(
                     fontSize: 30.0,
                     color: Colors.white,

@@ -1,42 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'dart:async';
 import 'firstscreen.dart';
-import 'secondscreen.dart';
 
-void main(){
-  runApp(MyApp());
+
+
+class secondscreen extends StatefulWidget{
+  @override
+  _secondscreenState createState() => _secondscreenState();
 }
 
-class MyApp extends StatelessWidget {
+class _secondscreenState extends State<secondscreen> {
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      routes:{
-    '/second' : (context) => firstscreen(),
-    '/third' : (context) => secondscreen(),
-    },
-      title: "Home Screen",
-      home: MyHomepage(),
-    );
-  }
-}
-
-class MyHomepage extends StatefulWidget{
-  @override
-  _MyHomepageState createState() => _MyHomepageState();
-}
-
-class _MyHomepageState extends State<MyHomepage>{
-
-  @override
-  Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
-       // automaticallyImplyLeading: false,
-      title: Text(
-      "Home Screen"
-      ),
+        title: Text(
+            "Third Screen"
+        ),
       ),
       body: Container(
         alignment: Alignment.center,
@@ -44,7 +24,7 @@ class _MyHomepageState extends State<MyHomepage>{
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-                "Home Screen",
+                "Third Screen",
               style: TextStyle(
                 fontSize:30.0,
                 fontWeight: FontWeight.w600,
@@ -59,15 +39,10 @@ class _MyHomepageState extends State<MyHomepage>{
                 ),
                 color: Colors.red,
                 onPressed: (){
-//                  Navigator.push(
-//                    context,
-//                    MaterialPageRoute(builder: (context) => firstscreen()),
-//                  );
-                Navigator.pushNamed(context, "/second");
-
+                  Navigator.pop(context);
                 },
                 child: Text(
-                  "Screen 2",
+                  "Back",
                   style: TextStyle(
                     fontSize: 30.0,
                     color: Colors.white,
@@ -75,7 +50,6 @@ class _MyHomepageState extends State<MyHomepage>{
                 ),
               ),
             ),
-
             Padding(
               padding: EdgeInsets.all(10.0),
               child: RaisedButton(
@@ -85,15 +59,13 @@ class _MyHomepageState extends State<MyHomepage>{
                 ),
                 color: Colors.red,
                 onPressed: (){
-//                  Navigator.push(
-//                    context,
-//                    MaterialPageRoute(builder: (context) => firstscreen()),
-//                  );
-                  Navigator.pushNamed(context, "/third");
-
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => firstscreen()),
+                  );
                 },
                 child: Text(
-                  "Screen 3",
+                  "second screen",
                   style: TextStyle(
                     fontSize: 30.0,
                     color: Colors.white,
