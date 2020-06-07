@@ -1,37 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'dart:async';
-import 'firstscreen.dart';
 
-void main(){
-  runApp(MyApp());
+
+class firstscreen extends StatefulWidget{
+@override
+_firstscreenState createState() => _firstscreenState();
 }
 
-class MyApp extends StatelessWidget {
+class _firstscreenState extends State<firstscreen> {
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "Home Screen",
-      home: MyHomepage(),
-    );
-  }
-}
-
-class MyHomepage extends StatefulWidget{
-  @override
-  _MyHomepageState createState() => _MyHomepageState();
-}
-
-class _MyHomepageState extends State<MyHomepage>{
-
-  @override
-  Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
-       // automaticallyImplyLeading: false,
-      title: Text(
-      "Home Screen"
-      ),
+        title: Text(
+            "Second Screen"
+        ),
       ),
       body: Container(
         alignment: Alignment.center,
@@ -39,7 +22,7 @@ class _MyHomepageState extends State<MyHomepage>{
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(""
-                "Home Screen",
+                "Second Screen",
               style: TextStyle(
                 fontSize:30.0,
                 fontWeight: FontWeight.w600,
@@ -54,13 +37,10 @@ class _MyHomepageState extends State<MyHomepage>{
                 ),
                 color: Colors.red,
                 onPressed: (){
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => firstscreen()),
-                  );
+                  Navigator.pop(context);
                 },
                 child: Text(
-                  "Screen 1",
+                  "Screen 2",
                   style: TextStyle(
                     fontSize: 30.0,
                     color: Colors.white,
