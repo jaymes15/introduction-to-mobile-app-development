@@ -23,71 +23,82 @@ class MyHomepage extends StatefulWidget{
 }
 
 class _MyHomepageState extends State<MyHomepage>{
-Icon cusIcon = Icon(Icons.search);
-Widget cusSearchBar = Text("App Bar");
+
   @override
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
-//        bottom:PreferredSize(
-//          preferredSize: Size(0.0,50.0),
-//          child: Container(),
-//        ),
-        elevation: 30.0,
-        backgroundColor: Colors.blue,
-        titleSpacing:0.0,
-        actions: <Widget>[
-//          InkWell(
-//            onTap: (){},
-//            child: SizedBox(
-//              //width:10.0,
-//
-//              child:cusIcon,
-//            ),
-//          ),
-          IconButton(
-            onPressed:(){
-              setState(() {
-                if(this.cusIcon.icon == Icons.search){
-                  this.cusIcon = Icon(Icons.cancel);
-                  this.cusSearchBar = TextField(
-                                                  textInputAction: TextInputAction.go,
-                                                  style:TextStyle(
-                                                    color: Colors.white,
-                                                    fontSize: 16.0,
-                                                  ),
-                                                decoration: InputDecoration(
-                                                  border: InputBorder.none,
-                                                  hintText: "Search Text",
-                                                ),
-                                               );
-                }
-                else{
-                      this.cusIcon = Icon(Icons.search);
-                      this.cusSearchBar = Text("App Bar");
-                }
-              });
-            },
-            icon:cusIcon,
-
-          ),
-          IconButton(
-            onPressed: (){},
-            icon: Icon(Icons.more_vert),
-          )
-
-        ],
-
-        //centerTitle: true,
-        leading: IconButton(
-          onPressed: (){},
-          icon : Icon(Icons.menu)
-        ),
-        title:cusSearchBar,
+        title: Text('App Bar'),
       ),
-      body: Center(
+      //bottomSheet:Text("this is a bottom sheet "),
+//      floatingActionButton: IconButton(
+//        onPressed:(){},
+//        icon: Icon(Icons.message),
+//        color: Colors.green,
+//      ),
+//      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+      bottomNavigationBar: BottomAppBar(
+        child: Row(
+          children: <Widget>[
+            Expanded(
+              child: SizedBox(
+                height: 60.0,
+                child: InkWell(
+                  onTap: (){},
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Icon(
+                        Icons.search,
+                      ),
+                      Text("search"),
+                    ],
+                  ),
+                ),
+              ),
+            ),
 
+
+            Expanded(
+              child: SizedBox(
+                height: 60.0,
+                child: InkWell(
+                  onTap: (){},
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Icon(
+                        Icons.search,
+                      ),
+                      Text("search"),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+
+
+            Expanded(
+              child: SizedBox(
+                height: 60.0,
+                child: InkWell(
+                  onTap: (){},
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Icon(
+                        Icons.search,
+                      ),
+                      Text("search"),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
+        )
       ),
+      body: Center(),
     );
   }
 }
