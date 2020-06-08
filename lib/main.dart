@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
     '/second' : (context) => firstscreen(),
     '/third' : (context) => secondscreen(),
     },
-      title: "Home Screen",
+      title: "Media Query",
       home: MyHomepage(),
     );
   }
@@ -38,71 +38,27 @@ class _MyHomepageState extends State<MyHomepage>{
       "Home Screen"
       ),
       ),
-      body: Container(
-        alignment: Alignment.center,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-                "Home Screen",
-              style: TextStyle(
-                fontSize:30.0,
-                fontWeight: FontWeight.w600,
-              ),
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Container(
+           // width: MediaQuery.of(context).size.width, full device width
+            width: MediaQuery.of(context).size.width * 0.3,
+            height: MediaQuery.of(context).size.height * 0.5,
+            decoration: BoxDecoration(
+              color: Colors.red,
             ),
-            Padding(
-              padding: EdgeInsets.all(10.0),
-              child: RaisedButton(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 30.0,
-                  vertical: 15.0,
-                ),
-                color: Colors.red,
-                onPressed: (){
-//                  Navigator.push(
-//                    context,
-//                    MaterialPageRoute(builder: (context) => firstscreen()),
-//                  );
-                Navigator.pushNamed(context, "/second");
-
-                },
-                child: Text(
-                  "Screen 2",
-                  style: TextStyle(
-                    fontSize: 30.0,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
+          ),
+          Container(
+            width: MediaQuery.of(context).size.width * 0.3,
+            decoration: BoxDecoration(
+              color: Colors.blue,
             ),
+          ),
 
-            Padding(
-              padding: EdgeInsets.all(10.0),
-              child: RaisedButton(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 30.0,
-                  vertical: 15.0,
-                ),
-                color: Colors.red,
-                onPressed: (){
-//                  Navigator.push(
-//                    context,
-//                    MaterialPageRoute(builder: (context) => firstscreen()),
-//                  );
-                  Navigator.pushNamed(context, "/third");
+        ],
 
-                },
-                child: Text(
-                  "Screen 3",
-                  style: TextStyle(
-                    fontSize: 30.0,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-            )
-          ],
-        ),
       ),
     );
   }
