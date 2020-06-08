@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
     '/second' : (context) => firstscreen(),
     '/third' : (context) => secondscreen(),
     },
-      title: "Media Query",
+      title: "Orientation",
       home: MyHomepage(),
     );
   }
@@ -28,6 +28,28 @@ class MyHomepage extends StatefulWidget{
 }
 
 class _MyHomepageState extends State<MyHomepage>{
+Widget potrait(){
+  return Center(
+    child: Text(
+      "potrait",
+      style: TextStyle(
+        color: Colors.red,
+        fontSize: 30.0,
+      ),
+    ),
+  );
+}
+Widget landscape(){
+  return Center(
+    child: Text(
+      "landscape",
+      style: TextStyle(
+        color: Colors.red,
+        fontSize: 30.0,
+      ),
+    ),
+  );
+}
 
   @override
   Widget build(BuildContext context){
@@ -35,30 +57,18 @@ class _MyHomepageState extends State<MyHomepage>{
       appBar: AppBar(
        // automaticallyImplyLeading: false,
       title: Text(
-      "Home Screen"
+      "Orientation"
       ),
       ),
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Container(
-           // width: MediaQuery.of(context).size.width, full device width
-            width: MediaQuery.of(context).size.width * 0.3,
-            height: MediaQuery.of(context).size.height * 0.5,
-            decoration: BoxDecoration(
-              color: Colors.red,
-            ),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width * 0.3,
-            decoration: BoxDecoration(
-              color: Colors.blue,
-            ),
-          ),
-
-        ],
-
+      body: OrientationBuilder(
+        builder: (context, orientation){
+          if (orientation == Orientation.portrait){
+            return potrait();
+          }
+          else{
+                return landscape();
+          }
+        }
       ),
     );
   }
